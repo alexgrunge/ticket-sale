@@ -1,0 +1,2 @@
+ALTER TABLE bus ADD COLUMN last_gps_update TIMESTAMP WITH TIME ZONE;
+ALTER TABLE bus ADD COLUMN current_known_position VARCHAR (512);

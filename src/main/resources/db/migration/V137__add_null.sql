@@ -1,0 +1,1 @@
+ALTER TABLE sale_shift ALTER COLUMN finish_date DROP NOT NULL;

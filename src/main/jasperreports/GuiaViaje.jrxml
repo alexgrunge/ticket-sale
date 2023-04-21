@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2018-11-29T20:07:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GuiaViaje" columnCount="3" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="185" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de2377c2-ecc2-4de6-a3c5-3d76944f194e">
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="fc1f3166-8294-45e2-a903-28b52b7df3b4">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="origen" class="java.lang.String"/>
+	<parameter name="destino" class="java.lang.String"/>
+	<parameter name="noAutobus" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="horaSalida" class="java.lang.String"/>
+	<parameter name="horaLlegada" class="java.lang.String"/>
+	<parameter name="operador1" class="java.lang.String"/>
+	<parameter name="operador2" class="java.lang.String"/>
+	<parameter name="anticipo" class="java.lang.String"/>
+	<parameter name="noRuta" class="java.lang.String"/>
+	<parameter name="jefeOficina" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="oficina" class="java.lang.String"/>
+	<field name="qr" class="java.io.InputStream"/>
+	<field name="horaPasada" class="java.lang.String"/>
+	<group name="Clientes"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<image>
+				<reportElement x="9" y="3" width="51" height="42" uuid="bc4436ea-5835-480a-b972-a7101ed7ab06"/>
+				<imageExpression><![CDATA["http://staging.medrano.just-cloud.com/images/medher.51e02af8.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="302" y="3" width="66" height="23" forecolor="#6B2CB8" uuid="d053da58-5935-40b6-912d-fac3a7a9606f"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Destino:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="385" y="65" width="105" height="19" forecolor="#852483" uuid="cf1db3ed-30f4-45d9-b58c-08e7d3192d26"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{horaLlegada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="4" width="175" height="23" forecolor="#5E368F" uuid="f10bb5dc-8664-48f9-898b-379dc542ed3c"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{destino}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="411" y="47" width="50" height="16" backcolor="#FFCCFF" uuid="e6540aaa-72bb-41fe-9480-8eb1246cf93a"/>
+				<text><![CDATA[Autobus:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="465" y="45" width="90" height="18" uuid="03428f7b-fe1d-4a48-a1a7-6c7fb9d8c8c6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{noAutobus}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="201" y="29" width="163" height="23" forecolor="#6B2CB8" uuid="3fac3e83-8b1e-43a1-a3dc-666c9f3ee488"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Guía de Viaje]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="3" width="66" height="23" forecolor="#6B2CB8" uuid="2cccd7b3-9d82-436c-9e66-db2fbd72c6da"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Origen:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="143" y="4" width="151" height="23" forecolor="#5E368F" uuid="52bae445-fab3-47ad-beb8-0fc8126b2bcf"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{origen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="63" width="94" height="19" forecolor="#852483" uuid="9cfd0b81-6a0c-41f8-8daf-31de10389a7c"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="63" width="105" height="19" forecolor="#852483" uuid="ad33eee9-05d9-4b7d-8801-e7e2b5f88de1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{horaSalida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="63" width="90" height="16" backcolor="#FFCCFF" uuid="71cec218-42e1-4cbe-9686-cf2287db69b6"/>
+				<text><![CDATA[Hora de Salida:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="295" y="65" width="87" height="16" backcolor="#FFCCFF" uuid="168720b6-6523-423e-87b9-a02e797fe04b"/>
+				<text><![CDATA[Hora de Llegada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="8" y="85" width="55" height="16" backcolor="#FFCCFF" uuid="50865395-9943-41f2-8d89-f8adcb6552f9"/>
+				<text><![CDATA[Operador1:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="241" y="85" width="119" height="15" uuid="0e83e6b7-e374-40fc-8fcd-9aad89c78dfd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operador2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="381" y="87" width="80" height="16" backcolor="#FFCCFF" uuid="424dedd8-de3f-4faa-a91d-04fce0230d89"/>
+				<text><![CDATA[Anticipo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="86" width="100" height="15" uuid="1ebd0f59-e527-47f3-8857-21965bba8973"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operador1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="85" width="50" height="16" backcolor="#FFCCFF" uuid="3d003d36-2bb3-4063-bf4a-6db18c5c52c5"/>
+				<text><![CDATA[Operador2:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="465" y="87" width="90" height="15" uuid="b16deda5-cc03-48b5-94a7-f2827c40e6df"/>
+				<textFieldExpression><![CDATA[$P{anticipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="6" width="68" height="20" forecolor="#FCFAFA" backcolor="#CC00FF" uuid="e15be6e7-1635-4b7e-b430-a9c8378c6533"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Oficina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="93" y="7" width="68" height="20" forecolor="#FCFAFA" backcolor="#CC00FF" uuid="65cfad3c-39fe-467e-adc0-a3f2897d7db8"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="97" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="1" y="29" width="77" height="33" forecolor="#D445D6" uuid="997a7ece-b25c-48e8-a0fa-ff5fa734a851"/>
+				<box padding="0">
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#7E1BA8"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#7E1BA8"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#7E1BA8"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#7E1BA8"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{oficina}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="90" y="19" width="91" height="71" uuid="b657aac6-cad5-4951-b46b-2d177644d717"/>
+				<imageExpression><![CDATA[$F{qr}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="4" y="68" width="71" height="21" uuid="a71f0e0b-0b52-46e3-b65f-f3d46fa7b5c6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{horaPasada}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="81">
+			<line>
+				<reportElement x="1" y="35" width="240" height="1" uuid="3de1a6f9-816b-4601-8a70-a377d112cd5c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="297" y="35" width="240" height="1" uuid="f71ab302-8ba7-4973-8429-d1fcbc5d0230">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="37" y="34" width="183" height="22" uuid="5d588388-7945-4c86-937d-56c66582928c"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operador1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="34" width="149" height="22" uuid="b5d9924b-fd64-4a1a-945c-dbe9233ffeb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{jefeOficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="65" width="90" height="15" uuid="91fc6c6d-c8da-499c-b284-8e728c081425"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{noAutobus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="65" width="90" height="15" uuid="b938a9f5-e130-4c2c-ae1a-120d768edd2a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{anticipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="66" width="100" height="14" uuid="b4b1b76e-0a40-46f9-95ec-1dd2a52ed199"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{noRuta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="7" width="105" height="19" forecolor="#852483" uuid="91434cd9-1991-44d7-9fa9-66bcfe2e6250"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="64" width="50" height="16" backcolor="#FFCCFF" uuid="4f34d0c5-3c28-4055-9d95-62004f60f7c9"/>
+				<text><![CDATA[Unidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="151" y="65" width="50" height="16" backcolor="#FFCCFF" uuid="2bc86fe0-9a69-4d37-afed-5a388d06ea4a"/>
+				<text><![CDATA[Ruta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="318" y="65" width="63" height="16" backcolor="#FFCCFF" uuid="d8f15b68-e52b-47d9-9990-41fbbdf530b7"/>
+				<text><![CDATA[Anticipo por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="3" width="339" height="21" uuid="06c513aa-fcbc-42e7-8b73-d6a4d6225523"/>
+				<text><![CDATA[BUEN VIAJE, CONDUCE CON PRECAUCIÓN TU FAMILIA TE ESPERA!]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

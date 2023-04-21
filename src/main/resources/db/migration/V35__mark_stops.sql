@@ -1,0 +1,2 @@
+ALTER TABLE stop_off ADD COLUMN stop BOOLEAN DEFAULT false; 
+

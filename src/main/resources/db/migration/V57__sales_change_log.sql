@@ -1,0 +1,1 @@
+ALTER TABLE cash_entry ADD COLUMN change_amount NUMERIC(21,4) NOT NULL DEFAULT 0;

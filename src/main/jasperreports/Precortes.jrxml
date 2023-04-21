@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-08-21T11:11:51 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Precortes" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bde5a07b-d7e1-49a5-8de9-7510e4cde292">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="FechaPrecorte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HoraPrecorte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fondo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Agregado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="2" width="231" height="17" forecolor="#611FB8" uuid="db7bb7a4-fbe0-4a1c-8559-647075f22481"/>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Precortes realizados durante el turno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="18" width="126" height="18" forecolor="#39435E" uuid="b3f55933-afbe-4c71-bcbf-c906f7c74a98"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha del Precorte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="19" width="126" height="18" forecolor="#39435E" uuid="631c30a2-9c3f-49d3-8476-2369360a35f3"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Hora del Precorte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="19" width="60" height="18" forecolor="#39435E" uuid="70d8ff2d-974b-47c0-9b9c-37007ee4ce4a"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Liquidado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="0" width="126" height="20" uuid="4e72be59-ccbd-4380-ae38-413570986753"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FechaPrecorte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="126" height="20" uuid="96768e0a-70c4-4031-b89c-452121bf9826"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{HoraPrecorte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="0" width="90" height="20" uuid="33f8cb33-cd71-43cb-9fef-9794ff16d4fb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Fondo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

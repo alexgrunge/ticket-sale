@@ -1,0 +1,1 @@
+ALTER TABLE payment_coupon ADD COLUMN amount NUMERIC(10,4) NOT NULL;

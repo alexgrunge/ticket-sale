@@ -1,0 +1,1 @@
+ALTER TABLE trip ADD COLUMN diesel_liters INTEGER;

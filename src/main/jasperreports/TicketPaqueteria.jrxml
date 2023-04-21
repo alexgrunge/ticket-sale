@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-10-14T15:28:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketPaqueteria" pageWidth="283" pageHeight="198" whenNoDataType="AllSectionsNoDetail" columnWidth="243" leftMargin="20" rightMargin="20" topMargin="17" bottomMargin="8" uuid="f5ba0af6-aa21-436c-87d9-919ac898aae4">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<parameter name="Folio" class="java.lang.String"/>
+	<parameter name="dateCreated" class="java.lang.String"/>
+	<parameter name="routeName" class="java.lang.String"/>
+	<parameter name="taquillera" class="java.lang.String"/>
+	<parameter name="origin" class="java.lang.String"/>
+	<parameter name="destination" class="java.lang.String"/>
+	<parameter name="departure" class="java.lang.String"/>
+	<parameter name="arrival" class="java.lang.String"/>
+	<parameter name="entrega" class="java.lang.String"/>
+	<parameter name="recibe" class="java.lang.String"/>
+	<parameter name="totalPrice" class="java.lang.String"/>
+	<parameter name="observaciones" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="148" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="26" width="119" height="13" uuid="e9489019-4c6d-4825-831d-05f796e43604"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateCreated}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="159" height="20" uuid="c86166b8-9baf-424d-b62e-0a4d4918ac75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Equipaje]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="36" height="16" uuid="3ea4b8b8-0819-4c04-b5d0-c366979c87f9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Viaje:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="40" width="83" height="16" uuid="55990016-066e-4b6d-b16c-aa5b0f8aa658"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{routeName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="174" y="25" width="64" height="14" uuid="6f7c49b9-e0df-4977-bc01-e671f23c7be7"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Taquillera:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="40" width="99" height="15" uuid="547629f6-3c03-451c-aa7d-2da181a80d0c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{taquillera}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="0" width="70" height="20" uuid="15c3afbd-b408-47df-bf00-2d58113708ea"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Folio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="56" width="36" height="18" uuid="e8a1d5e1-6732-41a1-881c-4e567e0c200a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Origen:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="56" width="99" height="18" uuid="e6f52ceb-fc0f-432c-b32e-fa28fcce2970"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{origin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="78" width="92" height="18" uuid="911f7cf2-187a-4e99-8a65-7ad46946c243"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{destination}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="55" width="98" height="19" uuid="4ce29530-434d-4a0a-b95c-bfbc188f4f40"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{departure}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="77" width="34" height="20" uuid="1388786f-1024-4edc-9c75-c17cada00b9e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Destino:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="100" width="30" height="12" uuid="49b18dfb-ee45-44db-9fde-c1cb78f4fe98"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="100" width="40" height="14" uuid="6700cd93-28e3-4232-b8ca-5e4efe4af56f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPrice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="97" width="34" height="20" uuid="299a24bd-c92d-4fb2-a901-2309705c28f3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Entrega:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="97" width="90" height="20" uuid="c1a9db89-622c-48bd-83f3-a9e26cf819ea"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{entrega}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="118" width="34" height="20" uuid="f3e8e026-42b1-4d4c-90bb-0b6049441350"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Recibe:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="118" width="90" height="20" uuid="f9fcc0b2-5d76-42d3-9292-e6746629bbce"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{recibe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="118" width="104" height="30" uuid="bf40bc4f-5516-4f7e-a26c-5b39cf7d7521"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{observaciones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="140" y="76" width="98" height="19" uuid="f4bcbe9c-a703-494a-b019-f0da8be07c16"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{arrival}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

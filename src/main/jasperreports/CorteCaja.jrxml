@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-09-10T21:17:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CorteCaja" pageWidth="283" pageHeight="425" whenNoDataType="AllSectionsNoDetail" columnWidth="267" leftMargin="8" rightMargin="8" topMargin="8" bottomMargin="5" uuid="c9e95cad-2fe1-4be4-98ce-31063bdc9aa9">
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="FechaPrecorte" class="java.lang.String"/>
+	<parameter name="Oficina" class="java.lang.String"/>
+	<parameter name="NoTaquilla" class="java.lang.String"/>
+	<parameter name="FechaHoy" class="java.lang.String"/>
+	<parameter name="Hora" class="java.lang.String"/>
+	<parameter name="VentaEfectivo" class="java.lang.String"/>
+	<parameter name="VentaTC" class="java.lang.String"/>
+	<parameter name="VentaME" class="java.lang.String"/>
+	<parameter name="Retiro" class="java.lang.String"/>
+	<parameter name="Resta" class="java.lang.String"/>
+	<parameter name="VentaPrecortes" class="java.lang.String"/>
+	<parameter name="JefaOficina" class="java.lang.String"/>
+	<parameter name="Taquillera" class="java.lang.String"/>
+	<parameter name="VentaDep" class="java.lang.String"/>
+	<parameter name="TotalVenta" class="java.lang.String"/>
+	<parameter name="InicioCaja" class="java.lang.String"/>
+	<parameter name="FolioCorte" class="java.lang.String"/>
+	<parameter name="CancelacionesEf" class="java.lang.String"/>
+	<parameter name="CancelacionesME" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Oficina" class="java.lang.String"/>
+	<field name="NoTaquilla" class="java.lang.String"/>
+	<field name="FechaHoy" class="java.lang.String"/>
+	<field name="Hora" class="java.lang.String"/>
+	<field name="VentaTC" class="java.lang.String"/>
+	<field name="VentaME" class="java.lang.String"/>
+	<field name="VentaEfectivo" class="java.lang.String"/>
+	<field name="Retiro" class="java.lang.String"/>
+	<field name="Resta" class="java.lang.String"/>
+	<field name="VentaPrecortes" class="java.lang.String"/>
+	<field name="FechaPrecorte" class="java.lang.String"/>
+	<field name="HoraPrecorte" class="java.lang.String"/>
+	<field name="RetiroPrecorte" class="java.lang.String"/>
+	<field name="RestaPrecorte" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="41" height="12" uuid="321885a6-c716-49a2-b36a-269fa74f0b75"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Oficina:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="25" width="48" height="14" uuid="c811f20b-6ba9-4d57-8d0f-54d41c833592"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No. Taquilla:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="13" width="84" height="12" uuid="a45cbac8-81fe-4f65-92fd-58c05ed811de"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Oficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="26" width="67" height="12" uuid="83ae0179-8474-4f7f-a67f-09854135e059"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NoTaquilla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="13" width="70" height="12" uuid="f5cebf25-c254-4a09-9e7c-82d3356b1e0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FechaHoy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="13" width="60" height="12" uuid="43cf1c96-6987-4887-ba55-4ccbff27a81d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Hora}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="0" width="182" height="12" forecolor="#834896" uuid="0b0a6d31-35ca-4d82-8917-9ab45db0a29f"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Informe de Corte de Caja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="80" height="14" uuid="136c987f-fa07-494a-b1dd-19c8c8f1dfe1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[T vendido en TC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="80" height="14" uuid="ac02d02f-33b7-407d-87fd-5ebc7ed3d31e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[T vendido en ME :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="39" width="60" height="11" uuid="2fd88288-0629-43d8-b5a3-4578c4c89dcf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaEfectivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="25" width="60" height="14" uuid="0a552c9a-f3f0-4180-9188-16f8aef1e7ae"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaTC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="141" y="50" width="62" height="14" uuid="8402b8c2-bef2-4b65-b0e4-97f0dee28148"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Queda en caja:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="50" width="60" height="14" uuid="b4bead0f-2dc1-405d-b25e-d4ca01d5a33b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="38" width="56" height="12" uuid="4cba89bc-40d5-480f-aa88-90ef2449fcf5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Retiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="50" width="56" height="14" uuid="dd0057b3-476c-4dbe-87b7-fab994d150b9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Resta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="64" width="62" height="14" uuid="4b0f7070-32d6-4719-b95e-2c63d5b630ad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total en venta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="211" y="64" width="56" height="14" uuid="41c1e948-f81b-461d-933a-54924d93dbe9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TotalVenta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="39" width="80" height="11" uuid="f90d28f6-4364-431c-96cc-0ec32c5a11da"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tvendido en Ef:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="39" width="62" height="14" forecolor="#01030A" uuid="8db122bf-b038-4575-bf20-2abd05dcb431">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Se retiró:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="64" width="59" height="15" uuid="b33efeb4-3174-4e9d-a777-4547fc45fb7f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaDep}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="64" width="79" height="15" uuid="875d0100-84cc-45c5-8c56-a4ffd82400d0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total en depositos :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="79" width="73" height="15" uuid="ed8efd04-fd7b-4bcc-9b08-c90809119521"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cancelaciones ME:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="211" y="79" width="56" height="15" uuid="e65531d5-9c09-4a17-8758-39f87571cf5a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CancelacionesME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="79" width="79" height="15" uuid="a526b490-21e8-463b-885f-e701898cd11a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cancelaciones Ef:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="79" width="54" height="15" uuid="88645ae8-b9db-4528-afc7-1bd21f8538c7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CancelacionesEf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="11" width="65" height="11" forecolor="#39435E" uuid="c5862aa8-c1bf-4136-9442-9c7e2ccb7912"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hora del Precorte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="10" width="74" height="12" forecolor="#39435E" uuid="5e3f41e9-a30a-4fa3-8cad-4046888781ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha del Precorte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="11" width="41" height="11" forecolor="#656D82" uuid="90fde78e-0dc3-4105-b8b2-b553117a75e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Se retiró:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="12" width="67" height="11" forecolor="#39435E" uuid="1c80fd5f-02e5-48f5-88f3-fb3e041d697a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Se quedó en caja:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="-1" width="119" height="11" uuid="ad1dfb5f-a0ca-41d9-b815-5e59e5e7fa6b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total vendido en Precortes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="-1" width="67" height="12" uuid="f19ed028-cfba-4c3c-9942-b7dd6a45ac94"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Oficina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="79" y="0" width="65" height="20" uuid="947fe54c-689c-45dc-9bd7-181d89e36445"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HoraPrecorte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="0" width="44" height="20" uuid="14854c44-e043-48e5-a782-01e0d83b9c2d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RetiroPrecorte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="0" width="69" height="20" uuid="64d33a4a-4368-4edc-b430-020e93bdce45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RestaPrecorte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="73" height="20" uuid="192e9661-a9ea-470d-a8f7-f3d5af41e499"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaPrecorte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="21" width="49" height="19" uuid="87585fe3-c996-4515-968f-b9867880b3ec"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Entrega:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="40" width="48" height="16" uuid="f49dfd84-0e76-4cde-8560-150a94bf2dba"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Recibe:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="30" width="156" height="11" uuid="9fe33001-044e-4157-8125-824afe5fcbf6"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Taquillera}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="56" y="40" width="143" height="1" uuid="87a834f2-73d7-4fd7-96e1-8e26be783161"/>
+			</line>
+			<line>
+				<reportElement x="56" y="56" width="143" height="1" uuid="132a2b69-6f71-4999-a841-ea14175c71b2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="2" width="134" height="18" uuid="b728a0a9-782a-4c33-a1de-ee43c5efcedd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[La taquillera entrega la cantidad de:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="2" width="91" height="18" uuid="5c66cfec-9502-4eea-9ab9-7e406b148fb6"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Retiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="38" width="66" height="20" uuid="ed32794b-6b2e-465d-81fb-96277cd7c479"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{FolioCorte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

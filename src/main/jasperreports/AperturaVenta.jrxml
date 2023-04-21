@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-09-01T13:02:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AperturaVenta" pageWidth="283" pageHeight="198" whenNoDataType="AllSectionsNoDetail" columnWidth="243" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ad186b9b-7b15-4a3e-9629-059a44218ee7">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<parameter name="Oficina" class="java.lang.String"/>
+	<parameter name="NoTaquilla" class="java.lang.String"/>
+	<parameter name="FechaHoy" class="java.lang.String"/>
+	<parameter name="Hora" class="java.lang.String"/>
+	<parameter name="InicioCaja" class="java.lang.String"/>
+	<parameter name="Taquillera" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="230" height="20" forecolor="#834896" uuid="dd3b5fe7-9a5d-4b3b-bd4e-bc20c6a7cba3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Reporte de Apertura de Caja para Venta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="23" width="100" height="21" uuid="d5d9fac8-3de9-4ffc-bdfd-c67fa67d4524"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{FechaHoy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="44" width="100" height="14" uuid="45c699bf-1ab3-4208-aa4e-e8a9a0b18bc8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{Hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="23" width="122" height="14" uuid="a7e6d405-bed5-486a-948f-d6019103779b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Oficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="40" width="102" height="16" uuid="ba7a84b5-b846-4a51-a48b-2ad4b907af4d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NoTaquilla}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="60" width="100" height="18" uuid="d2bade0c-6fec-456e-8d05-24e8312db973"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[La caja inició con:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="60" width="100" height="17" uuid="ad9461e6-1ae8-43cc-a18c-39cad14d5fa6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{InicioCaja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="80" width="156" height="20" uuid="c02db41b-b12e-45a0-9df5-00eccc1218fa"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Taquillera}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

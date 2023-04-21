@@ -1,0 +1,4 @@
+ALTER TABLE route ADD COLUMN has_reverse BOOLEAN NOT NULL DEFAULT false;
+
+ALTER TABLE service_type_time ADD COLUMN reverse BOOLEAN NOT NULL DEFAULT false;
+

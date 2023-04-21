@@ -1,0 +1,1 @@
+ALTER TABLE sale_log ADD COLUMN browser_id VARCHAR(255);

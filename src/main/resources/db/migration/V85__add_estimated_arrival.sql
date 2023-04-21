@@ -1,0 +1,1 @@
+ALTER TABLE trip ADD COLUMN estimated_arrival TIMESTAMP WITH TIME ZONE DEFAULT null;

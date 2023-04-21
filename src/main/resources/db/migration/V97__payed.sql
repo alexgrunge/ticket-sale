@@ -1,0 +1,1 @@
+ALTER TABLE internet_sale ADD COLUMN payed BOOLEAN NOT NULL DEFAULT false;

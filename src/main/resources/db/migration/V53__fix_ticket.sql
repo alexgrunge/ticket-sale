@@ -1,0 +1,2 @@
+ALTER TABLE sale_log ADD COLUMN valid BOOLEAN DEFAULT true;
+

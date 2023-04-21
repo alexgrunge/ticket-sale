@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-09-01T13:06:34 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DetalleLiquidacion" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c57496ff-85b1-47c3-8786-e148bcc290a7">
+	<parameter name="liquidador" class="java.lang.String"/>
+	<parameter name="since" class="java.lang.String"/>
+	<parameter name="to " class="java.lang.String"/>
+	<parameter name="dateCreated" class="java.lang.String"/>
+	<parameter name="totalLiquidados" class="java.lang.String"/>
+	<parameter name="montoTotal" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="operador" class="java.lang.String"/>
+	<field name="monto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="200" height="20" uuid="0089d873-d0f2-4957-ac88-4d082df7172d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Detalle de Liquidación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="80" height="20" uuid="f61dcfc4-e23b-4511-be1c-b5782c66cf9e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Liquidador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="80" height="20" uuid="58d7f16e-e6d3-4df6-bf3e-4483f87692d1"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Apartir de:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="50" width="70" height="20" uuid="8bf28bcf-7e01-45b2-adb9-19e760a77d8b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Hasta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="31" width="130" height="20" uuid="bc1babef-9ab9-438f-9d5f-2f898f6a66ad"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{liquidador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="50" width="130" height="20" uuid="c760e027-db52-4858-ab66-aadfe16b8d06"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{since}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="50" width="130" height="20" uuid="62b39bfd-7049-4684-9a5a-88fc640ace3f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{to }]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="10" width="90" height="20" uuid="bc9225d7-e5bb-4421-9a13-912b0e84b668"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{dateCreated}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="130" height="20" uuid="279fb748-7d79-4bf9-a846-af836b600f20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Operador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="5" width="130" height="20" uuid="b7735273-7bcf-410d-bb9a-db018544893c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total liquidado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="135" y="5" width="1" height="20" uuid="3bfd7cf3-0bd2-4d85-b6b9-f60c3acdf6cf">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="130" height="20" uuid="7183a5b0-348d-4e93-a822-f4af84f50e0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{operador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="10" width="130" height="20" uuid="7c790894-cb6b-4b91-aa14-411e76054fff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="135" y="0" width="1" height="30" uuid="8e71fc8f-94b5-42a8-a038-ccdc35d13b2c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="150" height="20" uuid="5fe021ac-b0b9-4889-896b-354a1da178ba"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de Operadores Liquidados:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="10" width="60" height="20" uuid="d6c828f7-c081-4225-baab-969366aa392b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{totalLiquidados}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="12" width="150" height="20" uuid="0850e6b8-0c67-42d0-845e-4d4730638256"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Importe Total Liquidado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="12" width="60" height="20" uuid="a84b2ed5-b9f5-4593-9a46-c6cfd044eaa0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{montoTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

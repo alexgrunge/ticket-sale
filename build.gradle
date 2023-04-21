@@ -1,0 +1,220 @@
+buildscript {
+  repositories {
+    jcenter()
+    maven { url "https://repo.spring.io/libs-milestone" }
+		maven { url 'http://jasperreports.sourceforge.net/maven2' }
+		maven { url 'http://repository.jboss.org/maven2/' }
+    // maven { url "https://plugins.gradle.org/m2/" }
+  }
+
+  dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:${project.springBootVersion}"
+    classpath "org.zeroturnaround:gradle-jrebel-plugin:${project.jrebelVersion}"
+		classpath 'com.github.gmazelier:jasperreports-gradle-plugin:0.2.1'
+    // classpath "gradle.plugin.at.comm_unity.gradle.plugins:jpamodelgen-plugin:1.1.1"
+  }
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'rebel'
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'com.github.gmazelier.jasperreports'
+// apply plugin: 'at.comm_unity.gradle.plugins.jpamodelgen'
+
+def excludedFolders = [
+        './idea',
+        '.gradle',
+        "$buildDir/bundles",
+        "$buildDir/classes",
+        "$buildDir/dependency-cache",
+        "$buildDir/libs",
+        "$buildDir/reports",
+        "$buildDir/test-results",
+        "$buildDir/tmp",
+        "$buildDir/matrix",
+        "$buildDir/resources",
+        "$buildDir"
+]
+idea {
+  module {
+    inheritOutputDirs = false
+    jdkName = '1.8'
+    outputDir = file("$buildDir/classes/main/")
+    iml {
+      beforeMerged { module ->
+        module.dependencies.clear()
+        module.excludeFolders.clear()
+      }
+      whenMerged { module ->
+        module.dependencies*.exported = true
+        excludedFolders.each {
+          module.excludeFolders += module.pathFactory.path(file(it))
+        }
+      }
+    }
+    downloadSources = true
+  }
+}
+
+repositories {
+  jcenter()
+  maven { url "https://repo.spring.io/libs-milestone" }
+	maven { url 'http://jasperreports.sourceforge.net/maven2' }
+	maven { url 'http://repository.jboss.org/maven2/' }
+	maven { url 'http://jaspersoft.artifactoryonline.com/jaspersoft/jaspersoft-repo/' }
+}
+
+boolean enableJRebel = System.getenv("ENABLE_JREBEL") == 'true'
+
+List starters = ['web', 'data-jpa', 'data-rest', 'actuator', 'security']
+
+configurations {
+  // needs to be defined in order to create the dependency group
+  genWsdlClasses
+}
+
+dependencies {
+  compile 'org.springframework.boot:spring-boot-devtools'
+  compileOnly "org.projectlombok:lombok:1.16.12"
+	compile 'org.springframework:spring-tx'
+  compile 'org.springframework.social:spring-social-facebook'
+	compile "org.springframework.security.oauth:spring-security-oauth2:${project.springOauthVersion}"
+	starters.each {
+		compile "org.springframework.boot:spring-boot-starter-${it}"
+	}
+	compile 'org.springframework.data:spring-data-elasticsearch:1.3.2.RELEASE'
+
+	compile 'ma.glasnost.orika:orika-core:1.4.2'
+	compile 'org.flywaydb:flyway-core:3.2.1'
+  compile 'org.codehaus.groovy:groovy-jsr223:2.4.5'
+
+	compile 'com.paypal.sdk:rest-api-sdk:1.4.1'
+
+  compile 'com.google.api-client:google-api-client:1.20.0'
+	compile 'com.google.http-client:google-http-client:1.21.0'
+  compile 'com.restfb:restfb:1.17.0'
+  compile 'org.apache.pdfbox:pdfbox:2.0.0'
+  compile 'net.sf.jasperreports:jasperreports:6.1.0'
+  compile 'javax.activation:activation:1.1.1'
+  compile 'javax.mail:mail:1.4.7'
+
+	compile "org.postgresql:postgresql:${project.postgresVersion}"
+  compile "ch.qos.logback:logback-classic:${project.logbackVersion}"
+  compile "ch.qos.logback:logback-core:${project.logbackVersion}"
+  compile 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
+	compile ("net.glxn:qrgen:1.4")
+	compile 'com.google.code.gson:gson:2.5'
+	compile "com.sendgrid:sendgrid-java:${project.sendGridVersion}"
+	compile 'org.freemarker:freemarker:2.3.23'
+
+  compile group: 'org.apache.axis',
+            name: 'axis',
+            version: '1.4'
+
+  compile group: 'org.apache.axis',
+          name: 'axis-jaxrpc',
+          version: '1.4'
+
+  compile group: 'org.apache.axis',
+          name: 'axis-saaj',
+          version: '1.4'
+
+  compile group: 'axis',
+          name: 'axis-wsdl4j',
+          version: '1.5.1'
+
+  compile group: 'commons-discovery',
+          name: 'commons-discovery',
+          version: '0.2'
+
+  genWsdlClasses 'org.apache.axis:axis-ant:1.4',
+          'org.apache.axis:axis:1.4',
+          'org.apache.axis:axis-jaxrpc:1.4',
+          'axis:axis-wsdl4j:1.5.1',
+          'commons-codec:commons-codec:1.3',
+          'commons-logging:commons-logging:1.1.1',
+          'commons-discovery:commons-discovery:0.2'
+}
+
+sourceCompatibility = project.javaVersion
+targetCompatibility = project.javaVersion
+
+bootRun {
+  if(enableJRebel) {
+    String jrebelPath = "${System.getProperty('user.home')}/.jrebel/lib/libjrebel64.dylib"
+    if(new File(jrebelPath).exists()) {
+      jvmArgs = ["-agentpath:${jrebelPath}", "-Duser.timezone=UTC"]
+    }
+  }
+}
+
+sourceSets {
+  main {
+    java {
+      srcDirs += ['build/generated-src/ws', 'src/main/java', 'src/jpaModelgen/java']
+    }
+  }
+}
+
+jasperreports {
+  srcDir = project.file('src/main/jasperreports')
+  tmpDir = file("${project.buildDir}/jasperreports")
+  outDir = file("${project.buildDir}/classes/main")
+}   
+
+rebel {
+	showGenerated = true
+}
+
+bootRun.dependsOn(generateRebel)
+
+eclipse {
+	classpath {
+		defaultOutputDir = file("$buildDir/classes/main")
+	}
+}
+
+task genWsdlClasses {
+  // See http://gradle.org/docs/1.0-rc-2/userguide/ant.html
+  ant.taskdef(name: 'genClassesFromWSDL',
+          classname: 'org.apache.axis.tools.ant.wsdl.Wsdl2javaAntTask',
+          classpath: configurations.genWsdlClasses.asPath)
+
+  def configs = [
+          [
+              wsdl: 'https://www.facturemosya.com/webservice/sRecibirXML.php?wsdl',
+              namespace: 'http://www.facturemosya.com/soap/RecibirComprobanteParaTimbrado',
+              pckg: 'justcloud.facturemosya'
+          ],
+          [
+              wsdl: 'http://ws.widetech.com.co/wsHistoryGetByPlate.asmx?WSDL',
+              namespace: 'http://shareservice.co/',
+              pckg: 'justcloud.tracking'
+          ]
+  ]
+
+  def output = "$buildDir/generated-src/ws"
+  def outputFile = file(output)
+  outputFile.exists() || outputFile.mkdirs()
+  outputs.dir outputFile
+
+  ext.output = output
+
+  configs.each { config ->
+      ant.genClassesFromWSDL(url: config.wsdl, output: output) {
+          mapping(namespace: config.namespace, package: config.pckg)
+      }
+  }
+}
+
+compileJava.dependsOn(compileAllReports)
+compileJava.dependsOn(genWsdlClasses)
+//compileJava.options.compilerArgs += ["-proc:none"]
+
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.9'
+}
+

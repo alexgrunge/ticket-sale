@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-08-21T10:44:57 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PrecorteLiquidaciones" columnCount="2" printOrder="Horizontal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8044d74a-7274-44e3-9088-a350b7e02b80">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="Fondo" class="java.lang.String"/>
+	<parameter name="Ingreso" class="java.lang.String"/>
+	<parameter name="Total" class="java.lang.String"/>
+	<parameter name="Liquidador" class="java.lang.String"/>
+	<parameter name="JefeLiquidacion" class="java.lang.String"/>
+	<parameter name="TerminalNo" class="java.lang.String"/>
+	<parameter name="Oficina" class="java.lang.String"/>
+	<parameter name="FechaHoy" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="Hora" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="MontoEnCaja" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Operador" class="java.lang.String"/>
+	<field name="Liquidado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="4" width="290" height="26" forecolor="#834896" uuid="5f59447a-5dfd-4921-b2b6-d54b34391870"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Precortede Liquidación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="41" height="16" uuid="2a0557ff-011b-40a1-a232-b78d124c4a7a"/>
+				<text><![CDATA[Oficina:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="60" height="15" uuid="a3118f6c-9e1f-4fb0-9bae-64dd32bbb8f8"/>
+				<text><![CDATA[Terminal No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="20" width="122" height="14" uuid="72a7a83f-381f-40dd-a561-fe276eba9364"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Oficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="34" width="50" height="16" uuid="411250ed-0765-4712-b09e-2a3f108f2d6a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TerminalNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="21" uuid="b6e21c25-9b31-4e87-8c2c-ab9e97fe03b7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{FechaHoy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="21" width="100" height="14" uuid="1810598e-7470-4c1d-89f7-f548ee10fa81"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{Hora}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40">
+			<staticText>
+				<reportElement x="7" y="20" width="130" height="20" uuid="ee959842-4bba-4df5-8421-c756b3bb20ba"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Operador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="20" width="113" height="20" uuid="bb71ba0e-332e-40b6-9634-e64990dddf94"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="1" width="279" height="23" forecolor="#611FB8" uuid="ca8e7209-278a-4d18-9a82-db2238fe2e84"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Liquidaciones Realizadas desde el último reporte--]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="3" y="0" width="133" height="20" uuid="5967785e-22a4-46d4-8e69-b8c006916429"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Operador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="2" width="100" height="17" uuid="25ba5f0f-94b7-4902-b9e7-965a35a8edc7"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Liquidado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="48" width="69" height="20" uuid="625a5878-d861-4ae4-ba33-e38878c85e16"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Liquidador:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="49" width="162" height="18" uuid="699ee076-ee92-4fae-a928-5ccea1f1c7a2"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Liquidador}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="281" y="62" width="271" height="1" uuid="9387b618-a2d3-4b08-a2f8-21616a9ccf86">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="11" y="-1" width="189" height="25" uuid="cf3cf1f8-bc0b-4a8b-a8f3-372fb19874b6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total que ha liquidado la terminal:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="4" width="101" height="17" uuid="b91983d0-2968-4f66-9b4a-324dcc9c1d1a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="21" uuid="4146e949-7ced-4b7d-9f28-63cf6da63e7b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{FechaHoy}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="20" width="189" height="25" uuid="7e1d35a1-deeb-4e24-9721-ba6202663b59"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Se ingresa a la terminal:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="26" width="101" height="17" uuid="25a51110-d0f0-4274-9800-d591ab3d9a3f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Ingreso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="317" y="16" width="130" height="25" uuid="031fe8a8-a44f-4829-9be6-653f6c9702f5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[La terminal cuenta con:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="21" width="102" height="17" uuid="77c1ba4c-bb30-4189-858f-7f92ce1fc336"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MontoEnCaja}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

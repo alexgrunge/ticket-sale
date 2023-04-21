@@ -1,0 +1,21 @@
+CREATE TABLE cancel_package_event (
+    id VARCHAR(255) PRIMARY KEY,
+    starting_stop_id VARCHAR(255) REFERENCES stop_off(id),
+    ending_stop_id VARCHAR(255) REFERENCES stop_off(id),
+    sold_price NUMERIC(10, 4) NOT NULL,
+    internet_sale_id VARCHAR(255) REFERENCES internet_sale(id),
+    trip_id VARCHAR(255) REFERENCES trip(id),
+    account_id VARCHAR(255) REFERENCES client_account(id),
+    cancel_user_id VARCHAR(255) REFERENCES tickets_user(id),
+    cash_checkpoint_id VARCHAR(255) REFERENCES cash_checkpoint(id),
+    sale_shift_id VARCHAR(255) REFERENCES sale_shift(id),
+    payment_type VARCHAR(255) NOT NULL,
+    sender_name VARCHAR(512),
+    receiver_name VARCHAR(512),
+    concept VARCHAR(512),
+    contact_data VARCHAR(512),
+    original_date TIMESTAMP WITH TIME ZONE,
+    date_created TIMESTAMP WITH TIME ZONE,
+    last_updated TIMESTAMP WITH TIME ZONE,
+    version BIGINT
+);

@@ -1,0 +1,1 @@
+ALTER TABLE trip ADD COLUMN diesel_cost NUMERIC(12, 4);

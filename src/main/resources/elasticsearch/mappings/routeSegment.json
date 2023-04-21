@@ -1,0 +1,50 @@
+{
+		"routesegment": {
+				"properties": {
+						"routeId": {
+								"type": "string",
+								"index": "not_analyzed"
+						},
+						"startingStop": {
+								"properties": {
+										"name": {
+												"type": "string",
+												"fields": {
+														"raw": { "type":"string", "index": "not_analyzed" },
+														"i18n": { "type":"string", "analyzer": "simple_i18n" }
+												}
+										},
+										"suggestion": {
+												"type": "completion",
+												"index_analyzer": "simple_i18n",
+												"search_analyzer": "simple_i18n",
+												"payloads": true
+										},
+										"location":{
+												"type": "geo_point"
+										}
+								}
+						},
+						"endingStop": {
+								"properties": {
+										"name": {
+												"type": "string",
+												"fields": {
+														"raw": { "type":"string", "index": "not_analyzed" },
+														"i18n": { "type":"string", "analyzer": "simple_i18n" }
+												}
+										},
+										"suggestion": {
+												"type": "completion",
+												"index_analyzer": "simple_i18n",
+												"search_analyzer": "simple_i18n",
+												"payloads": true
+										},
+										"location":{
+												"type": "geo_point"
+										}
+								}
+						}
+				}
+		}
+}

@@ -1,0 +1,1 @@
+ALTER TABLE job_detail ALTER COLUMN base_salary DROP NOT NULL;

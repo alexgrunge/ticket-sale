@@ -1,0 +1,68 @@
+maximum:
+  students: 8
+  olderAdults: 4
+  total: 6
+  reserved: 4
+
+
+# invoice:
+#   username: democfdi
+#   password: demo2011
+
+invoice:
+  username: cfdisag040614qt2
+  password: 3738362
+  address: CELAYA ESQ. CANAL DEL NORTE
+  externalNumber: SIN NUMERO
+  settlement: SAN MARTIN TEPETLIXPAN
+  municipality: CUAUTITLAN IZCALLI
+  state: ESTADO DE MEXICO
+  country: Mexico
+  postalCode: 54768
+
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/tickets
+    username: tickets
+    password: tickets00
+    validationInterval: 15000
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMillis: 60000
+    maxAge: 600000
+    validationQuery: "SELECT 1;"
+    testOnBorrow: true
+
+spring.data.elasticsearch.clusterNodes: localhost:9300
+
+spring.social.facebook.appId: 181496698867701
+spring.social.facebook.appSecret: 6164359311f03239ecbdc48fe2bdf347
+
+google.clientId: 740769756205-7k1dfe5nfofhb9ks353dmb0hl557nhgn.apps.googleusercontent.com
+
+tracking:
+  username: TurismoWS
+  password: LRp24eF55
+  atEndRange: 1
+  maxDistance: 10
+  outRange: 1
+  minDelay: 3
+
+mastercard:
+  merchantId: 1079224
+  password: c4e2c00cbcb7943f912dffe25d1b575e
+
+logging.level.justcloud: DEBUG
+
+sendgrid:
+  from: noreply@turismoenomnibus.com.mx
+  username: dev.tickets.medrano
+  password: NN-:*]3f\+
+
+compropago:
+  key: sk_live_68f8d718441c040853
+
+# key: sk_test_7996b3e184394a833a
+# sk_test_44134871787949e36
+

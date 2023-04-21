@@ -1,0 +1,1 @@
+ALTER TABLE route ADD COLUMN advance NUMERIC(10, 4);

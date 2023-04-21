@@ -1,0 +1,1 @@
+ALTER TABLE route ADD COLUMN master_price BOOLEAN DEFAULT false;

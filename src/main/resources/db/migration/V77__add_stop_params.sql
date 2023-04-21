@@ -1,0 +1,2 @@
+ALTER TABLE stop_off ADD COLUMN stop_price NUMERIC(20,4) DEFAULT 0.0;
+ALTER TABLE stop_off ADD COLUMN checkpoint BOOLEAN DEFAULT false;

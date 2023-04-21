@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-09-01T13:05:58 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="288" pageHeight="198" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="248" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38ba4538-53e2-43af-a64f-45f42b8f1779">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="153"/>
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<style name="Style1" fontName="Serif" fontSize="8"/>
+	<parameter name="qrCode" class="java.io.InputStream"/>
+	<parameter name="leftQrCode" class="java.io.InputStream"/>
+	<parameter name="origin" class="java.lang.String"/>
+	<parameter name="destination" class="java.lang.String"/>
+	<parameter name="passenger" class="java.lang.String"/>
+	<parameter name="seatNumber" class="java.lang.String"/>
+	<parameter name="serviceType" class="java.lang.String"/>
+	<parameter name="departure" class="java.lang.String"/>
+	<parameter name="arrival" class="java.lang.String"/>
+	<parameter name="totalPrice" class="java.lang.String"/>
+	<parameter name="routeName" class="java.lang.String"/>
+	<parameter name="ticketNumber" class="java.lang.String"/>
+	<parameter name="dateCreated" class="java.lang.String"/>
+	<parameter name="subtotalPrice" class="java.lang.String"/>
+	<parameter name="taxes" class="java.lang.String"/>
+	<background>
+		<band height="21" splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="158" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+			<image>
+				<reportElement x="150" y="98" width="97" height="60" uuid="c1ec2841-407c-4ff2-a2be-ecefcad361da">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{qrCode}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Style1" x="-15" y="60" width="38" height="13" uuid="ea5e1fc1-5680-4e55-86a5-83b1c54e0a1c"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-13" y="121" width="30" height="12" uuid="c1e60c91-adc4-4237-aa4d-bc613cc409f5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Subtotal:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-14" y="36" width="36" height="16" uuid="3a0a1c3d-949e-44c2-8ab9-292de1bea356"/>
+				<text><![CDATA[Pasajero:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="30" y="36" width="220" height="13" uuid="1e120fef-75c2-4ec2-a093-86a3fcae8757"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{passenger}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="52" y="141" width="28" height="14" uuid="f1e33b70-4d40-4703-8483-8c212297a488"/>
+				<textFieldExpression><![CDATA[$P{totalPrice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Style1" x="-14" y="8" width="144" height="13" uuid="9e2bf703-5f7e-4be3-b4bc-33dd42b9e7cc"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vale en efectivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="158" y="70" width="27" height="13" uuid="ca84c9af-0684-4650-82c3-0ad5177658ab"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Folio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="185" y="70" width="63" height="13" uuid="47c4d032-f19b-4ca8-8c0e-f0d0a264a177"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ticketNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Style1" x="-13" y="133" width="30" height="12" uuid="ce99a39e-f5db-414a-ab65-b6b746b85bfc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Ival:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-14" y="142" width="30" height="12" uuid="27569d85-82ee-4d2c-a4c0-3eb497b971b2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="52" y="130" width="28" height="11" uuid="e3661b17-8b69-4873-87f7-904d06a5725d"/>
+				<textFieldExpression><![CDATA[$P{taxes}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="30" y="60" width="108" height="12" uuid="6540985c-ddf3-48aa-8ccc-7d93b85862ff"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="52" y="118" width="28" height="11" uuid="56f1ce57-f09d-422b-8ca1-4c1995d220d9"/>
+				<textFieldExpression><![CDATA[$P{subtotalPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="130" y="8" width="119" height="13" uuid="ab9bc72e-2a1d-4f72-b264-2eea97442087"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateCreated}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

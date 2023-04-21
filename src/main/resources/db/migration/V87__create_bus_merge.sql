@@ -1,0 +1,11 @@
+CREATE TABLE merge_bus (
+  id VARCHAR(255) NOT NULL,
+  old_trip1_id VARCHAR(255) REFERENCES trip(id),
+  old_trip2_id VARCHAR(255) REFERENCES trip(id),
+  new_trip_id VARCHAR(255) REFERENCES trip(id),
+  version BIGINT NOT NULL,
+  date_created TIMESTAMP WITH TIME ZONE NOT NULL,
+  last_updated TIMESTAMP WITH TIME ZONE NOT NULL
+);
+
+ALTER TABLE trip ADD COLUMN status VARCHAR(255) NOT NULL DEFAULT 'PROGRAMMED';

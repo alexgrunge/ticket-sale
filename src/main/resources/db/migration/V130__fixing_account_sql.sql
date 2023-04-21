@@ -1,0 +1,1 @@
+ALTER TABLE client_account ADD COLUMN name VARCHAR(512);

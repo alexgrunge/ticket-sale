@@ -1,0 +1,1 @@
+ALTER TABLE segment_var ADD COLUMN category VARCHAR(20) NOT NULL;

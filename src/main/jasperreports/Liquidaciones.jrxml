@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-10-16T00:29:10 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Liquidaciones" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b71f97c1-24c9-409a-b270-5aa513095020">
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="noLiquidacion" class="java.lang.String"/>
+	<parameter name="unidad" class="java.lang.String"/>
+	<parameter name="ruta" class="java.lang.String"/>
+	<parameter name="origen" class="java.lang.String"/>
+	<parameter name="fechaInicioViaje" class="java.lang.String"/>
+	<parameter name="fechaFinViaje" class="java.lang.String"/>
+	<parameter name="destino" class="java.lang.String"/>
+	<parameter name="operador1" class="java.lang.String"/>
+	<parameter name="operador2" class="java.lang.String"/>
+	<parameter name="dieselCredito" class="java.lang.String"/>
+	<parameter name="dieselContado" class="java.lang.String"/>
+	<parameter name="reparacion" class="java.lang.String"/>
+	<parameter name="estacionamiento" class="java.lang.String"/>
+	<parameter name="pistaCredito" class="java.lang.String"/>
+	<parameter name="pistaContado" class="java.lang.String"/>
+	<parameter name="artLimpieza" class="java.lang.String"/>
+	<parameter name="gastosHotel" class="java.lang.String"/>
+	<parameter name="gastosConferencia" class="java.lang.String"/>
+	<parameter name="lavada" class="java.lang.String"/>
+	<parameter name="refacciones" class="java.lang.String"/>
+	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="otro" class="java.lang.String"/>
+	<parameter name="dieselTotal" class="java.lang.String"/>
+	<parameter name="subTotalOp1" class="java.lang.String"/>
+	<parameter name="subTotalOp2" class="java.lang.String"/>
+	<parameter name="facAdminOp1" class="java.lang.String"/>
+	<parameter name="facAdminOp2" class="java.lang.String"/>
+	<parameter name="totalGastosOp1" class="java.lang.String"/>
+	<parameter name="totalGastosOp2" class="java.lang.String"/>
+	<parameter name="totalDescuentosOp1" class="java.lang.String"/>
+	<parameter name="totalDescuentosOp2" class="java.lang.String"/>
+	<parameter name="seguroOp1" class="java.lang.String"/>
+	<parameter name="seguroOp2" class="java.lang.String"/>
+	<parameter name="impNominaOp1" class="java.lang.String"/>
+	<parameter name="impNominaOp2" class="java.lang.String"/>
+	<parameter name="otrasRetencionesOp1" class="java.lang.String"/>
+	<parameter name="otrasRetencionesOp2" class="java.lang.String"/>
+	<parameter name="anticipoGastosOp1" class="java.lang.String"/>
+	<parameter name="anticipoGastosOp2" class="java.lang.String"/>
+	<parameter name="totalOp1" class="java.lang.String"/>
+	<parameter name="totalOp2" class="java.lang.String"/>
+	<parameter name="liquidador" class="java.lang.String"/>
+	<parameter name="NoNominaOp1" class="java.lang.String"/>
+	<parameter name="NoSeguroOp1" class="java.lang.String"/>
+	<parameter name="NoSeguroOp2" class="java.lang.String"/>
+	<parameter name="NoNominaOp2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="2" width="163" height="23" forecolor="#6B2CB8" uuid="c5642525-1f7d-4af0-a3b8-7a48de79bfa3"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Liquidación de Viaje]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="8" width="100" height="17" uuid="ead755f6-eb34-426c-bb94-f0031e501b42"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="30" width="105" height="20" uuid="e8bbd384-1478-4dd7-9865-e8902413c0f1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{noLiquidacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="420" splitType="Stretch">
+			<textField>
+				<reportElement x="53" y="0" width="68" height="20" forecolor="#BE3EC7" uuid="131ae674-eac6-4150-81b0-559c92624c36"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{unidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="2" width="47" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="9c8c9bb0-04b0-45ad-a9c5-973d46116c8d"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Unidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="410" y="2" width="105" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="a3f99e50-905c-4c78-9fed-5151bdf03a48"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Operadores:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="22" width="145" height="20" forecolor="#BE3EC7" uuid="07233e38-8f44-4533-a292-7016098483e7"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{operador1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="43" width="145" height="20" forecolor="#BE3EC7" uuid="f8ccad9e-e368-4471-96dc-f74fa18ebe60"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{operador2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="23" width="47" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="bcdfecbd-1eec-4d4b-b9dd-555686af7760"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Ruta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="46" width="47" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="63cd33c5-ee62-4be8-9456-6f15f45eca05"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Origen:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="49" width="47" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="a69900c0-0536-4967-8acf-6c98147667cf"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Destino:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="1" width="70" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="720dce29-ced3-42d6-af68-587733f50667"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Fecha de Inico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="23" width="70" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="befbef7f-a4e4-4d2d-a101-582953d63245"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Fecha de Fin:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="23" width="68" height="20" forecolor="#BE3EC7" uuid="498619c6-e0ae-4373-9a58-7ecab08b3c0e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{ruta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="48" width="68" height="20" forecolor="#BE3EC7" uuid="ff914a85-5bf8-4a68-a1d9-8e5340d0d5eb"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{origen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="48" width="90" height="20" forecolor="#BE3EC7" uuid="19ad5b6b-b596-42db-935e-e33e716a2b9a"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{destino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="-1" width="133" height="20" forecolor="#BE3EC7" uuid="fb9279ae-a687-4a9e-9a5c-ed3b787f51ea"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaInicioViaje}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="23" width="133" height="20" forecolor="#BE3EC7" uuid="80002a44-9952-4cde-bdd9-8ab3ba329bf8"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaFinViaje}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="95" width="86" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="171f91f1-779d-4f1c-bc91-42e944db74d4"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Diesel Crédito:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="175" width="80" height="19" forecolor="#BE3EC7" uuid="218ae96a-4bfe-4ee9-8a4f-100dfd5fcc7f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{pistaCredito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="195" width="80" height="19" forecolor="#BE3EC7" uuid="d9bd9588-0ed6-4eae-a8d2-1a12b5e68441"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{pistaContado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="214" width="80" height="19" forecolor="#BE3EC7" uuid="e6e0d72e-fe4f-48ec-bef5-c1a84c83437e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{artLimpieza}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="379" y="95" width="100" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="e8e8930a-fe2d-4cde-9920-21018e6ae356"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Consumo de Diesel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="93" width="80" height="19" forecolor="#BE3EC7" uuid="42e81c35-38bb-4814-99f0-c4187a0a2553"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{dieselCredito}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="190" y="201" width="90" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="1a8c1b3e-a55b-44fb-b185-cf27f4783829"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Subtotal:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="115" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="f22ccee6-4963-4782-afbd-38b930800d43"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Diesel Contado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="135" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="f4878880-dcf0-4069-bd41-0f40b1f4f00e"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Reparación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="155" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="9c83b338-0f2f-4877-b428-54412330f2b2"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Estacionamiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="175" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="8598f8a8-4738-4bf6-96e2-b14aeaf17c06"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Pistas Crédito:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="195" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="6ec6434a-0a3d-4015-a299-0ba221fb23e7"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Pistas Contado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="215" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="ee356ee3-f8ab-4005-b0b5-1d554e7fd208"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Art. de Limpieza:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="234" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="eb7074a8-ba73-4a6b-852f-7f7b1fee0dde"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Gastos de Hotel:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="254" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="037facd6-2e75-4127-a051-1db1496c7f7a"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Conferencias:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="274" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="0fbcfe8f-2603-4a4c-823b-336bcf2064d7"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Lavado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="294" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="52022311-1a72-4ad3-a7e5-057a69e2e018"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Refacciones:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="335" width="84" height="18" forecolor="#FCF7F7" backcolor="#CC99FF" uuid="e82a8490-6485-4f27-9637-77fc15c8c158"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Otros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="491" y="94" width="68" height="20" forecolor="#BE3EC7" uuid="b2df34b7-d684-48ae-ae48-a78209cec874"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{dieselTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="115" width="80" height="19" forecolor="#BE3EC7" uuid="4470f713-882f-4159-81cc-1f86473805f2"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{dieselContado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="134" width="80" height="19" forecolor="#BE3EC7" uuid="101fb225-2289-4a15-bee1-239b82ab5c2e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{reparacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="155" width="80" height="19" forecolor="#BE3EC7" uuid="62f9c31d-5be8-4089-8596-6c78de462257"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{estacionamiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="233" width="80" height="19" forecolor="#BE3EC7" uuid="b506dbec-5c9d-41f0-bc09-42bf3c0d64fd"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{gastosHotel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="254" width="80" height="19" forecolor="#BE3EC7" uuid="4038656d-72da-486c-8a4e-138a15adfe03"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{gastosConferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="274" width="80" height="19" forecolor="#BE3EC7" uuid="bacf7ea8-7e8b-4d68-aa69-50c51d3533a6"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{lavada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="294" width="80" height="19" forecolor="#BE3EC7" uuid="fa436b14-ccf3-4803-a24f-a09744961cfd"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{refacciones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="333" width="80" height="19" forecolor="#BE3EC7" uuid="a3cceb7e-3541-46e6-9868-8a581f0f7e1f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{otro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="129" width="145" height="20" forecolor="#A831B0" uuid="665b3c3b-9e73-4ec4-a9a3-d2f25c5d3cff"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operador1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="130" width="133" height="20" forecolor="#AC3CB4" uuid="7b0fb91b-741c-48ef-9eef-11f8db238072"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{operador2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="191" y="225" width="89" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="b9c893f8-3d51-42a5-9072-99ce8524f849"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Facilidad Adm.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="191" y="155" width="90" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="d9231075-c5f2-43d8-934d-c035bb23f8e6"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Total Gastos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="192" y="270" width="60" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="ce57ad2c-fa8d-4c3d-825d-65049a2bd2f1"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Imp. Nómina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="191" y="295" width="63" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="52cd014e-3332-45c7-a30d-5a73ad8dd650"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Imp. Seguro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="192" y="246" width="89" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="633c72ac-7de0-4a37-bfcb-71a7b545d255"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Retenciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="190" y="321" width="70" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="9448dff9-1983-44bd-b85b-f932a3cba653"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Total a Pagar:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="203" width="110" height="16" uuid="eb8fabb0-2a02-42cb-b50f-bb3d08854747"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{subTotalOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="226" width="110" height="16" uuid="d3f3c77d-90e1-47af-b41f-6f0e4cfd9d9a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{facAdminOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="156" width="110" height="16" uuid="48106fc8-4e2d-4db2-bb71-18d20fb6a31b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalGastosOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="297" width="102" height="16" uuid="0f74f7f3-55a7-4dc6-8d53-0774d8642094"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{seguroOp1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="191" y="175" width="89" height="18" forecolor="#FCF7F7" backcolor="#A26CD4" uuid="3481f5ce-3860-4eec-8434-cbe41f4fafbf"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Anticipo Gastos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="298" y="270" width="103" height="16" uuid="62e14436-b140-443e-a9a6-7e61d8c01055"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{impNominaOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="246" width="110" height="16" uuid="82eebe7e-eeaa-4357-9a87-d7dafca96bbc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{otrasRetencionesOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="176" width="110" height="16" uuid="f1667dd6-b3a6-414a-b6bd-ddaa44c6849a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{anticipoGastosOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="320" width="110" height="16" uuid="8ef56801-5749-4bf9-8bf1-d7ac7487642c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="202" width="110" height="16" uuid="1fc2ed50-13cf-40fc-8362-105e053654a3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{subTotalOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="226" width="110" height="16" uuid="012dde0f-b2e3-454d-938a-889a8046f708"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{facAdminOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="160" width="110" height="16" uuid="fafe9512-febe-41c9-abf9-09570748a4d5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalGastosOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="297" width="90" height="16" uuid="85da8ac6-d78d-42db-b051-6b9f5d7684d0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{seguroOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="273" width="90" height="16" uuid="203cc0f9-80ac-4f09-883a-993b2139544e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{impNominaOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="248" width="110" height="16" uuid="26fbce77-e2e8-479c-afee-2ca4a46fba9e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{otrasRetencionesOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="180" width="110" height="16" uuid="f959a8d1-fd2f-45cb-ae5d-8bf2402f9463"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{anticipoGastosOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="321" width="110" height="16" uuid="2711e132-33fa-42d9-8fd6-40f4c418fb91"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalOp2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="410" y="129" width="1" height="223" uuid="cb68f2b6-23cc-4f31-a04c-0885b29ad369">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="260" y="269" width="31" height="17" uuid="1ebdf316-c74a-464d-89ee-589d4e01d40e"/>
+				<textFieldExpression><![CDATA[$P{NoNominaOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="294" width="31" height="17" uuid="37c79ae1-8935-40ab-bc46-58404d3c04a5"/>
+				<textFieldExpression><![CDATA[$P{NoSeguroOp1}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="75" width="565" height="1" uuid="e72ead2d-6a30-408a-9c3b-1bbd364f276e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="360" y="2" width="1" height="73" uuid="83e28d1f-b0c2-4b23-ad1c-93a3624defa2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="184" y="75" width="3" height="277" uuid="d7d55da0-57ca-4838-a11b-d5c8db083659">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="184" y="150" width="377" height="1" uuid="97d7f5f0-f71b-40c1-af00-d3ff5fbed342">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="185" y="155" width="377" height="1" uuid="752b2b91-e893-4d8b-91e7-430eb25e8c75">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="186" y="352" width="372" height="1" uuid="feaf90c0-ad53-424c-af60-7912d6873290">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="416" y="297" width="31" height="17" uuid="39c984cb-2487-4bf1-82cc-07a357a23485"/>
+				<textFieldExpression><![CDATA[$P{NoSeguroOp2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="272" width="31" height="17" uuid="6faebc7d-8809-404d-bc0e-789e2ebb387f"/>
+				<textFieldExpression><![CDATA[$P{NoNominaOp2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="211" y="393" width="160" height="1" uuid="29b124c3-5a8d-4773-ba8a-10f243d518df">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="214" y="400" width="145" height="20" forecolor="#BE3EC7" uuid="7c49f7d5-ab7b-40f9-a776-9dd0a52df7c9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{operador1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="391" y="400" width="145" height="20" forecolor="#BE3EC7" uuid="a515d0c8-3605-4d2e-a348-8b18f2fd1fb1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{operador2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="395" y="393" width="160" height="1" uuid="4cf0d2a9-a65a-45cc-9dfd-323d9468de3c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="194" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="10" width="100" height="16" uuid="5ff8a481-f5ea-490b-87d0-ffb75157d71e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{ruta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="174" width="145" height="20" forecolor="#BE3EC7" uuid="6e84368b-798e-41aa-9ce8-7f36eced326d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{operador1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="174" width="145" height="20" forecolor="#BE3EC7" uuid="8081edc5-0a7a-4033-a54d-59d373b20a63"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{operador2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="167" width="160" height="1" uuid="59780fcf-3431-4b04-8b14-7d090f654186">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="184" y="167" width="160" height="1" uuid="c9fe8d78-0da9-4cbf-8a09-c5571029482c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="104" y="10" width="100" height="17" uuid="391d94ee-bb4b-4940-8ec3-f9ef9fac5446"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="236" y="10" width="47" height="17" uuid="5eb52331-0486-4823-ac5d-a9f6eabf369c"/>
+				<text><![CDATA[Unidad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="10" width="82" height="17" uuid="f39aa6b1-a90d-4cb2-bca8-2dbd37aac8c8"/>
+				<textFieldExpression><![CDATA[$P{unidad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="26" width="561" height="1" uuid="7a6bc159-4b61-45a0-8910-b6a2ac75fd62">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="7" width="561" height="1" uuid="a36f0f7c-95a0-4c43-8ec1-2b8bf3d9e320">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="10" width="96" height="17" uuid="4c879e79-56a2-4328-91b3-683b9e96a3e3"/>
+				<text><![CDATA[Fecha liquidación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="10" width="47" height="17" uuid="81b72129-ec8b-4495-92ec-42057ea11f5d"/>
+				<text><![CDATA[Viaje:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="40" width="117" height="17" uuid="518fa779-f3f4-4336-8176-bc54e7d95831"/>
+				<text><![CDATA[Facilidad Administrativa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="126" y="40" width="94" height="16" uuid="288e3585-40aa-4c00-a873-a73106d15335"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{facAdminOp1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="236" y="40" width="117" height="17" uuid="f7fadbaa-f9c9-4720-97b0-9da0349331d3"/>
+				<text><![CDATA[Facilidad Administrativa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="40" width="110" height="16" uuid="936ae241-e29c-4e36-b85d-fa617421b525"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{facAdminOp2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="61" width="117" height="17" uuid="2e42c03f-6a23-4fbe-a826-43687fbb0d39"/>
+				<text><![CDATA[Total Descuentos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="126" y="61" width="94" height="16" uuid="6e2e1174-02c5-478b-a1fe-f30c2876e7bc"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{totalDescuentosOp1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="236" y="61" width="117" height="17" uuid="d28df4e2-d49f-4fc0-b6c4-fba534842e9e"/>
+				<text><![CDATA[Total Gastos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="361" y="61" width="110" height="16" uuid="c1e37aa3-62ac-4815-9a2d-dc88154eecb7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalDescuentosOp2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="230" y="27" width="1" height="93" uuid="c1232511-5b7b-4b41-b88b-2915e77fe7f2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="73" y="100" width="67" height="17" uuid="ec96d546-6c99-466b-804c-0061cd8967c8"/>
+				<text><![CDATA[Total a pagar:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="100" width="67" height="17" uuid="94aafa70-5a59-4045-92a6-23bacccb533c"/>
+				<text><![CDATA[Total a pagar:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="100" width="76" height="16" uuid="582d58f2-e009-4ff5-bb6d-99fca83e1701"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalOp1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="100" width="74" height="16" uuid="478e69dc-8165-49f5-b0aa-5f5acbb435c9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{totalOp2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="124" width="362" height="1" uuid="1fccce9e-d390-4f2f-a5f9-dbabc3f13346">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="27" y="129" width="100" height="21" uuid="2aa8e9ff-eea9-4f8e-a894-b928a5681dbd"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Operador B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="130" width="100" height="21" uuid="f2d637c9-3a14-4c7d-a38c-ffead76301c4"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Operador C]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

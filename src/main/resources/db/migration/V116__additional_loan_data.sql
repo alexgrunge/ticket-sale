@@ -1,0 +1,1 @@
+ALTER TABLE employee_loan ADD COLUMN number NUMERIC (10, 2) NOT NULL DEFAULT 0;

@@ -1,0 +1,274 @@
+<Schema name="Medrano">
+  <Cube name="Ventas" visible="true" cache="true" enabled="true">
+    <Table name="sale_data" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="office_location_id" highCardinality="false" name="Oficina">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="office_location" schema="public">
+        </Table>
+        <Level name="Nombre oficina" visible="true" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="salesman_id" highCardinality="false" name="Vendedor">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="tickets_user" schema="public">
+        </Table>
+        <Level name="Nombre" visible="true" column="id" nameColumn="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Apellido Paterno" visible="true" column="id" nameColumn="last_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Apellido Materno" visible="true" column="id" nameColumn="second_last_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="id" highCardinality="false" name="Tiempo">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="sale_time" schema="public">
+        </Table>
+        <Level name="A&#241;o" visible="true" column="year" nameColumn="year" type="String" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" column="month" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Semana" visible="true" column="week" type="String" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
+        </Level>
+        <Level name="D&#237;a del a&#241;o" visible="true" column="day_of_year" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Semana" visible="true" hasAll="true" primaryKey="id">
+        <Table name="sale_time" schema="public">
+        </Table>
+        <Level name="D&#237;a de la semana" visible="true" column="day_of_week" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Hora" visible="true" hasAll="true" primaryKey="id">
+        <Table name="sale_time" schema="public">
+        </Table>
+        <Level name="Hora" visible="true" column="hour" type="String" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="N&#250;mero de ventas" column="id" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Total de venta" column="sale_total" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total en efectivo" column="cash_amount" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total en tarjeta" column="cc_amount" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total en monedero" column="account_amount" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total en transferencias" column="transfer_amount" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Viajes" visible="true" cache="true" enabled="true">
+    <Table name="trip_data" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="bus_id" highCardinality="false" name="Autobus">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="bus" schema="public">
+        </Table>
+        <Level name="N&#250;mero" visible="true" column="bus_number" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="driver1_id" highCardinality="false" name="Operador 1">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="individual" schema="public">
+        </Table>
+        <Level name="N&#250;mero" visible="true" column="id" nameColumn="employee_number" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Nombre" visible="true" column="id" nameColumn="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Apellido Paterno" visible="true" column="id" nameColumn="last_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Apellido Materno" visible="true" column="id" nameColumn="second_last_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="driver2_id" highCardinality="false" name="Operador 2">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="individual" schema="public">
+        </Table>
+        <Level name="N&#250;mero" visible="true" column="id" nameColumn="employee_number" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Nombre" visible="true" column="id" nameColumn="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Apellido Paterno" visible="true" column="id" nameColumn="last_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Apellido Materno" visible="true" column="id" nameColumn="second_last_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="run_id" highCardinality="false" name="Ruta">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="product" schema="public">
+        </Table>
+        <Level name="Nombre ruta" visible="true" column="id" nameColumn="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="run_id" highCardinality="false" name="Origen">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id" primaryKeyTable="product">
+        <Join leftKey="beginning_id" rightKey="id">
+          <Table name="product" schema="public">
+          </Table>
+          <Table name="stop_off" schema="public">
+          </Table>
+        </Join>
+        <Level name="Nombre" visible="true" table="stop_off" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="run_id" highCardinality="false" name="Destino">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id" primaryKeyTable="product">
+        <Join leftKey="destination_id" rightKey="id">
+          <Table name="product" schema="public">
+          </Table>
+          <Table name="stop_off" schema="public">
+          </Table>
+        </Join>
+        <Level name="Nombre" visible="true" table="stop_off" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="id" highCardinality="false" name="Tiempo de salida">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="trip_departure_time" schema="public">
+        </Table>
+        <Level name="A&#241;o" visible="true" column="year" type="String" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" column="month" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Semana" visible="true" column="week" type="String" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
+        </Level>
+        <Level name="D&#237;a del a&#241;o" visible="true" column="day_of_year" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Semana" visible="true" hasAll="true" primaryKey="id">
+        <Table name="trip_departure_time" schema="public">
+        </Table>
+        <Level name="D&#237;a de la semana" visible="true" column="day_of_week" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Hora" visible="true" hasAll="true" primaryKey="id">
+        <Table name="trip_departure_time" schema="public">
+        </Table>
+        <Level name="Hora del d&#237;a" visible="true" column="hour" type="String" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="id" highCardinality="false" name="Tiempo de llegada">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="trip_arrival_time" schema="public">
+        </Table>
+        <Level name="A&#241;o" visible="true" column="year" type="String" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" column="month" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Semana" visible="true" column="month" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="D&#237;a del a&#241;o" visible="true" column="day_of_year" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Semana" visible="true" hasAll="true" primaryKey="id">
+        <Table name="trip_arrival_time" schema="public">
+        </Table>
+        <Level name="D&#237;a de la semana" visible="true" column="day_of_week" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Hora" visible="true" hasAll="true" primaryKey="id">
+        <Table name="trip_arrival_time" schema="public">
+        </Table>
+        <Level name="Hora del d&#237;a" visible="true" column="hour" type="String" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="N&#250;mero de viajes" column="id" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Consumo total de diesel" column="diesel_liters" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Consumo promedio de diesel por viaje" column="diesel_liters" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="M&#225;ximo consumo de diesel por viaje" column="diesel_liters" aggregator="max" visible="true">
+    </Measure>
+    <Measure name="M&#237;nimo consumo de diesel por viaje" column="diesel_liters" aggregator="min" visible="true">
+    </Measure>
+    <Measure name="Consumo promedio de diesel por kil&#243;metro" column="diesel_per_kilometer" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="M&#225;ximo consumo de diesel por km" column="diesel_per_kilometer" aggregator="max" visible="true">
+    </Measure>
+    <Measure name="M&#237;nimo consumo de diesel por km" column="diesel_per_kilometer" aggregator="min" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Tickets" visible="true" cache="true" enabled="true">
+    <Table name="trip_seat" schema="public">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="starting_stop_id" highCardinality="false" name="Origen">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="stop_off" schema="public">
+        </Table>
+        <Level name="Nombre del origen" visible="true" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ending_stop_id" highCardinality="false" name="Destino">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="stop_off" schema="public">
+        </Table>
+        <Level name="Nombre del destino" visible="true" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="trip_id" highCardinality="false" name="Ruta">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id" primaryKeyTable="trip">
+        <Join leftKey="run_id" rightKey="id">
+          <Table name="trip" schema="public">
+          </Table>
+          <Table name="product" schema="public">
+          </Table>
+        </Join>
+        <Level name="Ruta" visible="true" table="product" column="name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="id" highCardinality="false" name="Tiempo de venta">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="ticket_sale_time" schema="public">
+        </Table>
+        <Level name="A&#241;o" visible="true" column="year" type="String" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Mes" visible="true" column="month" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+        <Level name="Semana" visible="true" column="week" type="String" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
+        </Level>
+        <Level name="D&#237;a del a&#241;o" visible="true" column="day_of_year" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Semana" visible="true" hasAll="true" primaryKey="id">
+        <Table name="ticket_sale_time" schema="public">
+        </Table>
+        <Level name="D&#237;a de la semana" visible="true" column="day_of_week" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Hora" visible="true" hasAll="true" primaryKey="id">
+        <Table name="ticket_sale_time" schema="public">
+        </Table>
+        <Level name="Hora del d&#237;a" visible="true" column="hour" type="String" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="passenger_type" highCardinality="false" name="Tipo de pasajero">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="passenger_type" schema="public">
+        </Table>
+        <Level name="Tipo de pasajero" visible="true" column="id" nameColumn="name" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="N&#250;mero de tickets" column="id" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Total vendido" column="sold_price" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

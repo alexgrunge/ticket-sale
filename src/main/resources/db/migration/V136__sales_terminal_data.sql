@@ -1,0 +1,2 @@
+ALTER TABLE sales_terminal ADD COLUMN sales_terminal BOOLEAN DEFAULT FALSE NOT NULL;
+ALTER TABLE sales_terminal ADD COLUMN payment_terminal BOOLEAN DEFAULT FALSE NOT NULL;

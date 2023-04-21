@@ -1,0 +1,3 @@
+DELETE FROM bus_position;
+ALTER TABLE bus_position ADD COLUMN width INTEGER NOT NULL;
+ALTER TABLE bus_position ADD COLUMN height INTEGER NOT NULL;

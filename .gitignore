@@ -1,0 +1,11 @@
+/build
+/data
+/.gradle
+/bin/
+/.settings
+/.project
+/.classpath
+/workbench.xmi
+*.ipr
+*.iws
+*.iml

@@ -1,0 +1,1 @@
+ALTER TABLE notification ADD COLUMN subject VARCHAR(512) NOT NULL;

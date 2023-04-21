@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2019-03-28T20:38:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="288" pageHeight="198" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="248" leftMargin="20" rightMargin="20" topMargin="36" bottomMargin="20" uuid="38ba4538-53e2-43af-a64f-45f42b8f1779">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="153"/>
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<style name="Style1" fontName="Serif" fontSize="8"/>
+	<parameter name="qrCode" class="java.io.InputStream"/>
+	<parameter name="leftQrCode" class="java.io.InputStream"/>
+	<parameter name="origin" class="java.lang.String"/>
+	<parameter name="destination" class="java.lang.String"/>
+	<parameter name="passenger" class="java.lang.String"/>
+	<parameter name="seatNumber" class="java.lang.String"/>
+	<parameter name="serviceType" class="java.lang.String"/>
+	<parameter name="departure" class="java.lang.String"/>
+	<parameter name="arrival" class="java.lang.String"/>
+	<parameter name="totalPrice" class="java.lang.String"/>
+	<parameter name="routeName" class="java.lang.String"/>
+	<parameter name="ticketNumber" class="java.lang.String"/>
+	<parameter name="dateCreated" class="java.lang.String"/>
+	<parameter name="subtotalPrice" class="java.lang.String"/>
+	<parameter name="taxes" class="java.lang.String"/>
+	<parameter name="taquillera" class="java.lang.String"/>
+	<parameter name="passengerType" class="java.lang.String"/>
+	<background>
+		<band height="100" splitType="Stretch">
+			<textField>
+				<reportElement style="Style1" mode="Opaque" x="-10" y="0" width="252" height="100" forecolor="#A8B3A8" uuid="30f02372-845f-43d8-a428-4a42e4f3af37"/>
+				<box>
+					<topPen lineColor="#0A0A0A"/>
+					<leftPen lineColor="#0A0A0A"/>
+					<bottomPen lineColor="#0A0A0A"/>
+					<rightPen lineColor="#0A0A0A"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="30" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{passengerType}]]></textFieldExpression>
+			</textField>
+		</band>
+	</background>
+	<detail>
+		<band height="141" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+			<image>
+				<reportElement x="158" y="93" width="87" height="48" uuid="c1ec2841-407c-4ff2-a2be-ecefcad361da">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{qrCode}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Style1" x="109" y="16" width="38" height="14" uuid="4cb19764-c2c3-4d70-8596-8a12bb62b1dd"/>
+				<text><![CDATA[Destino:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="162" y="63" width="30" height="13" uuid="d101cfcf-7ef4-4e4c-beff-2bbb4b854a1c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Asiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-12" y="77" width="31" height="14" uuid="dcba8a8f-cfc3-4180-b4fd-1589a27123c2"/>
+				<text><![CDATA[Salida:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-12" y="91" width="30" height="13" uuid="ea5e1fc1-5680-4e55-86a5-83b1c54e0a1c"/>
+				<text><![CDATA[Llegada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-13" y="105" width="30" height="12" uuid="c1e60c91-adc4-4237-aa4d-bc613cc409f5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Subtotal:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="109" y="0" width="36" height="14" uuid="98b72eb9-face-4480-859e-632c8ae0938b"/>
+				<text><![CDATA[Origen:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-13" y="43" width="36" height="16" uuid="3a0a1c3d-949e-44c2-8ab9-292de1bea356"/>
+				<text><![CDATA[Pasajero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-13" y="60" width="63" height="15" uuid="f59ae4f0-28c2-4e3e-9fa2-98c22908f147"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tipo de servicio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="151" y="16" width="99" height="12" uuid="557e66fe-8cca-4dd2-a487-672123653428"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{destination}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="17" y="23" width="83" height="16" uuid="c996e450-9801-45b4-9576-23f8b1b1b1a7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{routeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="151" y="0" width="99" height="13" uuid="9b080847-2498-445d-8155-4e91a1e9293b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{origin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="26" y="43" width="220" height="13" uuid="1e120fef-75c2-4ec2-a093-86a3fcae8757"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{passenger}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="195" y="62" width="48" height="13" uuid="164fb740-2804-4856-920d-c99540cbfcb0"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{seatNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="54" y="60" width="79" height="13" uuid="220dd398-75e4-46e7-87fa-ab72959b703d"/>
+				<textFieldExpression><![CDATA[$P{serviceType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="20" y="76" width="119" height="13" uuid="5ec6c75c-066b-405b-a601-753f021d6faf"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{departure}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" positionType="Float" x="20" y="92" width="118" height="13" uuid="c423cf21-d18a-47c2-8900-190dab84b6f3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{arrival}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="52" y="127" width="28" height="14" uuid="f1e33b70-4d40-4703-8483-8c212297a488"/>
+				<textFieldExpression><![CDATA[$P{totalPrice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Style1" x="-14" y="24" width="23" height="13" uuid="9e2bf703-5f7e-4be3-b4bc-33dd42b9e7cc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Viaje:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="143" y="83" width="27" height="13" uuid="ca84c9af-0684-4650-82c3-0ad5177658ab"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Folio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="170" y="81" width="77" height="13" uuid="47c4d032-f19b-4ca8-8c0e-f0d0a264a177"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ticketNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Style1" x="-13" y="116" width="30" height="12" uuid="ce99a39e-f5db-414a-ab65-b6b746b85bfc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Iva:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="-14" y="129" width="30" height="12" uuid="27569d85-82ee-4d2c-a4c0-3eb497b971b2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="52" y="118" width="28" height="11" uuid="e3661b17-8b69-4873-87f7-904d06a5725d"/>
+				<textFieldExpression><![CDATA[$P{taxes}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement style="Style1" x="53" y="106" width="28" height="11" uuid="9f4a7163-78a0-441d-ab75-21acbc58e7b1"/>
+				<textFieldExpression><![CDATA[$P{subtotalPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" x="-14" y="1" width="119" height="13" uuid="a982f163-a796-4145-bc3d-5d16b4422838"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateCreated}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Style1" x="109" y="31" width="42" height="14" uuid="04bf5e58-bfad-4508-a2b2-013594de6a93"/>
+				<text><![CDATA[Taquillera:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="31" width="99" height="14" uuid="863d5141-1a4a-48af-af37-590155cf0ccc"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taquillera}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Style1" x="83" y="106" width="68" height="12" uuid="f8deb154-34e8-486e-8b1a-633d1090f3b3"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Tipo de pasajero]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Style1" x="81" y="117" width="70" height="12" uuid="d5e58a95-389b-41cf-85c5-7d44742fa14c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{passengerType}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,2 @@
+ALTER TABLE trip ADD COLUMN has_all_stamps BOOLEAN NOT NULL DEFAULT false;
+ALTER TABLE trip ADD COLUMN has_all_places BOOLEAN NOT NULL DEFAULT false;

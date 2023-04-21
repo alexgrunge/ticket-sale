@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2017-09-05T09:37:49 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListaAbordar" pageWidth="283" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="273" columnSpacing="45" leftMargin="5" rightMargin="5" topMargin="14" bottomMargin="20" uuid="de2377c2-ecc2-4de6-a3c5-3d76944f194e">
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="scaneados" class="java.lang.String"/>
+	<parameter name="oficina" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="noAutobus" class="java.lang.String"/>
+	<parameter name="destino" class="java.lang.String"/>
+	<parameter name="horaSalida" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="asiento" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="noBoleto" class="java.lang.String"/>
+	<field name="observaciones" class="java.lang.String"/>
+	<field name="origenPasajero" class="java.lang.String"/>
+	<field name="destinoPasajero" class="java.lang.String"/>
+	<field name="SC" class="java.lang.String"/>
+	<group name="Clientes"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<image>
+				<reportElement x="9" y="3" width="51" height="42" uuid="bc4436ea-5835-480a-b972-a7101ed7ab06"/>
+				<imageExpression><![CDATA["http://staging.medrano.just-cloud.com/images/medher.51e02af8.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="87" y="20" width="100" height="20" forecolor="#6B2CB8" uuid="d053da58-5935-40b6-912d-fac3a7a9606f"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lista de Abordar]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="20" width="65" height="20" forecolor="#852483" uuid="cf1db3ed-30f4-45d9-b58c-08e7d3192d26"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="3" width="140" height="16" forecolor="#6F32BA" uuid="f10bb5dc-8664-48f9-898b-379dc542ed3c"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{oficina}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="40" width="50" height="16" backcolor="#FFCCFF" uuid="e6540aaa-72bb-41fe-9480-8eb1246cf93a"/>
+				<text><![CDATA[Autobus:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="183" y="41" width="90" height="15" uuid="03428f7b-fe1d-4a48-a1a7-6c7fb9d8c8c6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{noAutobus}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="4" y="67" width="55" height="16" backcolor="#FFCCFF" uuid="50865395-9943-41f2-8d89-f8adcb6552f9"/>
+				<text><![CDATA[Abordan:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="66" width="50" height="16" backcolor="#FFCCFF" uuid="3d003d36-2bb3-4063-bf4a-6db18c5c52c5"/>
+				<text><![CDATA[Destino:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="90" width="73" height="16" backcolor="#FFCCFF" uuid="424dedd8-de3f-4faa-a91d-04fce0230d89"/>
+				<text><![CDATA[Hora de Salida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="67" width="40" height="15" uuid="1ebd0f59-e527-47f3-8857-21965bba8973"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{scaneados}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="68" width="107" height="15" uuid="0e83e6b7-e374-40fc-8fcd-9aad89c78dfd"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{destino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="90" width="83" height="15" uuid="b16deda5-cc03-48b5-94a7-f2827c40e6df"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{horaSalida}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="9" width="20" height="20" forecolor="#050505" backcolor="#F8F2FA" uuid="ecf7dab5-9ab6-4260-926c-88c54047d1da"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[#As.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="20" y="9" width="67" height="20" forecolor="#050505" backcolor="#F8F2FA" uuid="6d13433f-d47b-453c-8d03-3890c80abc91"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="150" y="9" width="40" height="20" forecolor="#050505" backcolor="#F8F2FA" uuid="03382b2a-ce26-4ad8-acfb-70a5abf4d6d9"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Boleto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="207" y="9" width="35" height="20" forecolor="#050505" backcolor="#F8F2FA" uuid="b47ecff6-83c1-4397-92ab-5fef0043e425"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Obs.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="90" y="9" width="24" height="20" forecolor="#030202" backcolor="#F8F2FA" uuid="ad14ac40-e94c-4c31-b6b5-d2044177ff05"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Origen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="119" y="9" width="27" height="20" forecolor="#050505" backcolor="#F8F2FA" uuid="6344ce30-4638-4502-8d2c-e20ae9163bc2"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Destino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="248" y="9" width="22" height="20" forecolor="#050505" backcolor="#F8F2FA" uuid="e30a6c71-b085-4fe6-b20d-4690b3ac0362"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[SC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="3" width="19" height="16" uuid="cde532af-8532-46db-a9db-5652ac2c107a"/>
+				<textElement textAlignment="Left">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="4" width="67" height="16" uuid="9dba5e5c-9983-4183-9f83-7c2346011783"/>
+				<textElement textAlignment="Left">
+					<font size="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="4" width="58" height="16" uuid="52a4edba-aab4-40fd-ace2-3cee20bdd367"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noBoleto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="4" width="27" height="15" uuid="26bc9f88-9e95-4e58-9a1a-ebdd9431c8e4"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origenPasajero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="4" width="23" height="16" uuid="5f450d80-bc02-431c-81a2-92173ea45dfb"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="4" width="27" height="15" uuid="c2e16ddf-e272-4925-9a99-8516d071f28e"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{destinoPasajero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="4" width="29" height="16" uuid="8d7efaaf-4616-4f38-8cd1-6ed3275b2951"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

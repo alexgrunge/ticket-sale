@@ -1,0 +1,1 @@
+ALTER TABLE sale_log ADD COLUMN change_amount NUMERIC(20, 4) NOT NULL DEFAULT 0;

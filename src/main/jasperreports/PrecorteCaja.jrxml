@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2016-09-10T21:17:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PrecorteCaja" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a0c77fc-3e17-4032-8795-e2379e8ded56">
+	<parameter name="Oficina" class="java.lang.String"/>
+	<parameter name="NoTaquilla" class="java.lang.String"/>
+	<parameter name="FechaHoy" class="java.lang.String"/>
+	<parameter name="Hora" class="java.lang.String"/>
+	<parameter name="VentaEfectivo" class="java.lang.String"/>
+	<parameter name="VentaTC" class="java.lang.String"/>
+	<parameter name="VentaME" class="java.lang.String"/>
+	<parameter name="Retiro" class="java.lang.String"/>
+	<parameter name="Resta" class="java.lang.String"/>
+	<parameter name="JefaOficina" class="java.lang.String"/>
+	<parameter name="Taquillera" class="java.lang.String"/>
+	<parameter name="TotalVenta" class="java.lang.String"/>
+	<parameter name="VentaDep" class="java.lang.String"/>
+	<parameter name="InicioCaja" class="java.lang.String"/>
+	<parameter name="Cancelaciones" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Oficina" class="java.lang.String"/>
+	<field name="NoTaquilla" class="java.lang.String"/>
+	<field name="FechaHoy" class="java.lang.String"/>
+	<field name="Hora" class="java.lang.String"/>
+	<field name="VentaEfectivo" class="java.lang.String"/>
+	<field name="VentaTC" class="java.lang.String"/>
+	<field name="VentaME" class="java.lang.String"/>
+	<field name="Retiro" class="java.lang.String"/>
+	<field name="Resta" class="java.lang.String"/>
+	<field name="JefaOficina" class="java.lang.String"/>
+	<field name="Taquillera" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="162" y="4" width="230" height="26" forecolor="#834896" uuid="dac85075-8e7c-42db-8374-e7ff89434710"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Informe de Precorte de Caja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="41" height="16" uuid="64054b80-2059-4cee-8d3f-ce0645f7a813"/>
+				<text><![CDATA[Oficina:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="60" height="15" uuid="39a9b389-39dc-44ec-90be-79cc08e5316d"/>
+				<text><![CDATA[No. Taquilla:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="20" width="122" height="14" uuid="1dba410e-9734-4e56-a099-c48676019559"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Oficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="34" width="102" height="16" uuid="d8e5cb8e-4c74-431e-bc15-13236346550c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NoTaquilla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="21" uuid="14905f93-231d-455d-88e1-542d97ab2221"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{FechaHoy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="21" width="100" height="14" uuid="c7b993b7-6b43-430b-a713-00c2b49d5148"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{Hora}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="63" width="98" height="39" uuid="18f5d605-492f-4c20-972d-7d98b590d05c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total vendido en Monedero E.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="27" width="139" height="18" uuid="3879ef99-008a-4282-ad07-06f1d671611b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total vendido en efectivo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="44" width="139" height="18" uuid="f6813e6c-7bab-4fc3-8804-421ca8139a75"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total vendido en TC:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="75" width="50" height="18" uuid="9457118e-cd94-4bcd-b0a6-29ebaffc293a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Se retiró:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="93" width="90" height="18" uuid="4a3db205-773d-4305-8ef0-e013bf3755fa"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Queda en caja:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="156" y="29" width="100" height="17" uuid="668af0c4-578c-406d-8635-2382177e158a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaEfectivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="156" y="46" width="100" height="17" uuid="5bd0cf9e-4021-4683-aa86-39f3268ddbcc"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaTC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="76" width="100" height="17" uuid="2857fabc-0adc-47f8-bd68-5579e62c43c1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="75" width="100" height="17" uuid="5f128b43-16ac-4910-93ed-86ccc0f0ac0a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Retiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="95" width="100" height="17" uuid="60420d05-ba54-4f22-aa65-f8788e18bd85"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Resta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="27" width="90" height="18" uuid="d2fcd8f5-515c-438e-9c77-e8f7a8218771"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total en venta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="385" y="29" width="100" height="17" uuid="76f087c4-fb21-4872-afcf-22d5f4a8c2d6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TotalVenta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="100" width="139" height="18" uuid="10cd37f4-60b7-42a7-ba0a-4e7785c7b076"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Total vendido en Dep:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="100" width="100" height="17" uuid="702e61ea-fbff-4942-b2d2-2ba57eb2313b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VentaDep}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="49" width="100" height="18" uuid="a6f7b912-461b-43ce-90c2-cd57ed285905"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[La caja inició con:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="385" y="51" width="100" height="17" uuid="ee05c0b7-5050-4da6-8da3-29bf33cee27c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{InicioCaja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="122" width="139" height="18" uuid="2720f9e8-6feb-4d9c-9f3d-1a7adf6cb818"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Cancelaciones:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="123" width="100" height="17" uuid="ed3133a9-a19b-4c24-b44a-889ea28c8581"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Cancelaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="81">
+			<staticText>
+				<reportElement x="11" y="36" width="49" height="20" uuid="337bf382-2f31-4366-ac92-b9525cac4ff4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Entrega:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="61" width="48" height="20" uuid="2d129cbc-6824-4e17-aa99-c1cd4f12bc18"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Recibe:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="68" y="36" width="156" height="22" uuid="1380a4d0-0298-40d3-aa1d-ac7bfb3b98c3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Taquillera}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="60" width="162" height="21" uuid="02238fa3-9683-4838-a60b-413d3c217204"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{JefaOficina}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="280" y="48" width="271" height="1" uuid="cdd3b62d-e192-4231-9de9-b64d4cddad66">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="281" y="72" width="271" height="1" uuid="cd4ba8e7-e735-4e06-9ef2-ba34456027c1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="6" y="6" width="164" height="15" uuid="80e82829-641c-4f13-b8e4-d50b4a52760b"/>
+				<text><![CDATA[La taquillera entrega la cantidad de:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="7" width="100" height="17" uuid="d68a2a72-46f1-449c-84c5-ac1194551cb0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Retiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="21" uuid="39886113-1274-4b3e-91cd-9e37afda3675"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{FechaHoy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

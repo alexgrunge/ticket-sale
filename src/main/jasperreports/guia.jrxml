@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-04-27T05:53:20 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="guia" printOrder="Horizontal" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="802efae0-ef4f-4c4f-bf6d-3d61bb50a8ba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="88"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="GuiaAdapter"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="routeNumber" class="java.lang.String"/>
+	<parameter name="stopOffName" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="operator1" class="java.lang.String"/>
+	<parameter name="operador2" class="java.lang.String"/>
+	<parameter name="departureDate" class="java.lang.String"/>
+	<parameter name="arrivalDate" class="java.lang.String"/>
+	<parameter name="busNumber" class="java.lang.String"/>
+	<parameter name="office" class="java.lang.String"/>
+	<parameter name="advanceBy" class="java.lang.String"/>
+	<parameter name="packageTotal" class="java.lang.String"/>
+	<field name="concept" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="9" y="6" width="50" height="50" uuid="09516ad9-c4d5-4949-a0bc-fc0e60538942"/>
+				<imageExpression><![CDATA["http://staging.medrano.just-cloud.com/images/medher.51e02af8.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="226" y="6" width="114" height="20" uuid="2d364d08-ee30-440f-9afa-4ab62f57de57"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Guía de Viaje]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="470" y="6" width="100" height="30" uuid="83b872bd-6626-4ea8-8968-86279efdfb6a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="470" y="33" width="95" height="22" uuid="d06b4361-2828-4047-a4e0-deaea4308fb2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="34" width="63" height="21" uuid="95fc44dd-7bc1-44ba-bb9b-31fe0b082df6"/>
+				<text><![CDATA[Líquidación:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="150" y="11" width="71" height="41" uuid="62e6304f-8316-4326-aeea-c7d5deb15497"/>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="69" height="19" uuid="81da86b5-f610-4dbc-90ae-b735c8cdc31b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Número de Ruta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="28" width="69" height="20" uuid="3007660f-0ea1-46d1-beec-dcd22bfc2fc2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha de Salida:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="93" width="59" height="20" uuid="49eb0bfa-53f1-4aae-bab4-c22855965d2e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Autobus:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="66" height="18" uuid="1813bae6-b10c-49c3-9876-e2d186ec7c7a"/>
+				<text><![CDATA[Operador 1:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="30" width="66" height="18" uuid="bcad9937-2d18-4cbf-9fa3-52231f9548ee"/>
+				<text><![CDATA[Operador 2:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="69" height="20" uuid="5e2dfcd5-b466-4cc0-8b1d-1f7578f116d1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hora de Salida:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="93" width="67" height="20" uuid="a89c37b2-3065-402e-a6df-80a7cc4087ef"/>
+				<text><![CDATA[Anticipo por:]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="80" y="1" width="101" height="21" uuid="6e44f436-7a73-4578-8bbc-380dc02743ff"/>
+				<textFieldExpression><![CDATA[$P{routeNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="301" height="21" uuid="c1542d2e-6c32-43c1-9eed-7ef0324f60ff"/>
+				<textFieldExpression><![CDATA[$P{operator1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="27" width="301" height="21" uuid="b57a2be4-61ad-4e42-9922-c52fb60161a5"/>
+				<textFieldExpression><![CDATA[$P{operador2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="29" width="101" height="21" uuid="1aedf17e-ff3b-47bf-936a-32f4b4ceb716"/>
+				<textFieldExpression><![CDATA[$P{departureDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="56" width="101" height="21" uuid="1ee38a2f-816e-4afc-838a-9e0a942e3003"/>
+				<textFieldExpression><![CDATA[$P{arrivalDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="95" width="90" height="17" uuid="8b620830-2146-4284-8adf-fed4db8c2c59"/>
+				<textFieldExpression><![CDATA[$P{advanceBy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="95" width="101" height="17" uuid="64873e2c-e2f7-4694-89e8-4cd20d9afa22"/>
+				<textFieldExpression><![CDATA[$P{busNumber}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="-17" width="580" height="1" uuid="1d007390-ee42-4256-a73c-3de429acd1df"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<printWhenExpression><![CDATA[$F{concept} != null]]></printWhenExpression>
+			<line>
+				<reportElement x="-10" y="7" width="580" height="1" uuid="5bc8dcfb-ccc2-4d70-b005-76b36c987de4"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<printWhenExpression><![CDATA[$F{concept} != null]]></printWhenExpression>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="106" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="110" height="13" uuid="8c92f07c-a321-4113-816a-4404cfd1dfb9"/>
+				<text><![CDATA[Firma del operador]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

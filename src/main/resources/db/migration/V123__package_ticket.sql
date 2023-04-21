@@ -1,0 +1,1 @@
+ALTER TABLE package_ticket ADD COLUMN trip_id VARCHAR(255) NOT NULL REFERENCES trip(id);

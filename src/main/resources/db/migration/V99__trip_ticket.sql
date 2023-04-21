@@ -1,0 +1,1 @@
+ALTER TABLE trip_seat ADD COLUMN ticket_id VARCHAR(512);

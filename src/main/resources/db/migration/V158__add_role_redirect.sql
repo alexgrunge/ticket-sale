@@ -1,0 +1,3 @@
+ALTER TABLE role ADD COLUMN redirect_url VARCHAR(255);
+ALTER TABLE role ADD COLUMN redirect_url_order INTEGER NOT NULL DEFAULT 0;
+
